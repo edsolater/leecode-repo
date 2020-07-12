@@ -1,8 +1,13 @@
 /**
+ * 值是一个索引值（代表一个指针）
+ * @typedef {number} Point
+ */
+
+/**
  * 快速排序
- * @param {number[]} arr 
- * @param {number} leftEdge 
- * @param {number} rightEdge 
+ * @param {number[]} arr
+ * @param {Point} leftEdge
+ * @param {Point} rightEdge
  */
 function quickSort(arr, leftEdge = 0, rightEdge = arr.length - 1) {
   if (leftEdge < rightEdge) {
@@ -13,13 +18,12 @@ function quickSort(arr, leftEdge = 0, rightEdge = arr.length - 1) {
   return arr
 }
 
-
 /**
  * 分区操作
- * @param {number[]} arr 
- * @param {number} leftEdge 
- * @param {number} rightEdge 
- * @returns {number} 返回被选中的基准所处的位置
+ * @param {number[]} arr
+ * @param {Point} leftEdge
+ * @param {Point} rightEdge
+ * @returns {Point} 返回被选中的基准所处的位置
  */
 function partition(
   arr,
@@ -39,9 +43,9 @@ function partition(
 
 /**
  * 交换两个数组项的值
- * @param {number} arr 
- * @param {number} i 1号索引
- * @param {number} j 2号索引
+ * @param {number} arr
+ * @param {Point} i 1号索引
+ * @param {Point} j 2号索引
  */
 function swap(arr, i, j) {
   if (i !== j) {
@@ -50,4 +54,3 @@ function swap(arr, i, j) {
     arr[j] = temp
   }
 }
-
