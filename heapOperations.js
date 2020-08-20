@@ -131,7 +131,7 @@ let createHeap = (candidates = [], heapType = "max") => {
  * @param {number} k 需要多少极值
  * @return {number[]}  极值数组
  */
-let getLeastNumbers = function (arr, k) {
+let getMinierNumbers = function (arr, k) {
   let myHeap = createHeap(arr.slice(0, k))
   for (let n of arr.slice(k)) {
     if (n < myHeap[0]) {
@@ -150,10 +150,10 @@ let getLeastNumbers = function (arr, k) {
  * @param {number} k 需要多少极值
  * @return {number[]}  极值数组
  */
-let getLeastNumbers = function (arr, k) {
+let getMaxierNumbers = function (arr, k) {
   let myHeap = createHeap(arr.slice(0, k))
   for (let n of arr.slice(k)) {
-    if (n < myHeap[0]) {
+    if (n > myHeap[0]) {
       popHeapTop(myHeap)
       insert(myHeap, "min", n)
     }
